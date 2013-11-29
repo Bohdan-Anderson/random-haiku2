@@ -82,7 +82,9 @@ while True:
     while True:
         print "type in the IP address of the server"
         address = raw_input(">")
-        response = urllib2.urlopen('http://'+address+"/jnames")
+        address = 'http://'+address+"/jnames"
+        print address
+        response = urllib2.urlopen(address)
         response = json.loads(response.read())
         if(len(response)):
             break
